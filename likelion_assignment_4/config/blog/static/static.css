@@ -1,0 +1,13 @@
+h1 {
+  color: aquamarine;
+  font-size: 120px;
+}
+
+img {
+  width: 200px;
+  height: 150px;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+}
