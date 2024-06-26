@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block content %}
+<div align="center">
+  <form action="{% url 'users:profile_edit' user_id=user.id %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+      <legend>기본정보</legend>
+      성별 : <label for="gender-man">남자</label
+      ><input type="radio" name="gender" value="man" id="gender-man" />
+      <label for="gender-woman">여자</label
+      ><input
+        type="radio"
+        name="gender"
+        value="woman"
+        id="gender-woman"
+        checked
+      />
+      프로필 사진 : <input type="file" name="image" /> <br />
+      자기소개:
+      <textarea
+        name="introduction"
+        cols="50"
+        rows="5"
+        placeholder="자기소개를 입력하세요"
+      ></textarea>
+      <br />
+      <button type="submit" id="btn_submit">프로필수정</button>
+      <button type="reset" id="btn_reset">다시작성</button>
+    </fieldset>
+  </form>
+</div>
+{% endblock content %}

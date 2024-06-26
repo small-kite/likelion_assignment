@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block title %} 프로필정보 {% endblock title %} {%
+block content %} {% block content %}
+<div align="center">
+  <a href="{% url 'home' %}">홈</a>
+  <h2>프로필 정보</h2>
+  <p>성별: {{ profile.gender }}</p>
+  <p>닉네임: {{ profile.nickname }}</p>
+  <p>자기소개: {{ profile.introduction }}</p>
+  {% if profile.image %}
+  <p>프로필 사진: <img src="{{ profile.image.url }}" alt="Profile Image" /></p>
+  {% endif %}
+  <p>
+    <a href="{% url 'users:profile_edit' user_id=profile.id %}"
+      >프로필 수정하기</a
+    >
+  </p>
+</div>
+
+{% endblock content %}
